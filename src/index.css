@@ -45,9 +45,10 @@ main {
   display: block;
   width: 100%;
   padding: 1.5rem;
+  margin-top: -2rem;
 
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0 0 1.5rem 1.5rem;
   outline: none;
 
   background-color: rgb(216, 215, 215);
@@ -93,4 +94,16 @@ main {
   text-shadow: 3px 3px rgba(0, 0, 0, 0.2);
   border-radius: 1.5rem;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.weather {
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.icon {
+  text-align: center;
 }

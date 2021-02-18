@@ -12,7 +12,7 @@ function App() {
   console.log(month, day, year);
 
   return (
-    <div className="app">
+    <div className="app warm">
       <main>
         <div className="search-box">
           <input
@@ -32,6 +32,7 @@ function App() {
         <div className="weather-box">
           <div className="temp">-15°C</div>
           <div className="weather">Snowing</div>
+          <div className="icon"></div>
         </div>
       </main>
     </div>
