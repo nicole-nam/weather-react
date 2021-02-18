@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const api = {
   key: "c07363721c7bd818ad23afe9f628432d",
@@ -6,34 +6,62 @@ const api = {
 };
 
 function App() {
+  const [query, setQuery] = useState("");
+  const [weather, setWeather] = useState({});
+
+  const search = function (e) {
+    if (e.key === "Enter") {
+      fetch(`${api.base}/weather?q=${query}&units=metric&&APPID=${api.key}`)
+        .then((res) => res.json())
+        .then((result) => {
+          setWeather(result);
+          setQuery("");
+          console.log(result);
+        });
+    }
+  };
+
   const year = new Date().getFullYear();
   const month = new Date().getMonth() + 1;
   const day = new Date().getDate();
-  console.log(month, day, year);
 
   return (
     <div className="app warm">
       <main>
         <div className="search-box">
+          <h1>city weather app</h1>
           <input
             type="text"
             className="search-bar"
             placeholder="Search..."
+            onChange={(e) => setQuery(e.target.value)}
+            value={query}
+            onKeyPress={search}
           ></input>
         </div>
+        {typeof weather.main != "undefined" ? (
+          <div>
+            <div className="location-box">
+              <div className="date">
+                {month}.{day}. {year}
+              </div>
+              <div className="location">
+                {weather.name},{weather.sys.country}
+              </div>
+            </div>
 
-        <div className="location-box">
-          <div className="location">Toronto, Canada</div>
-          <div className="date">
-            {month}/{day}' {year}
+            <div className="weather-box">
+              <div className="temp">{weather.main.temp}°C</div>
+              <div className="weather">{weather.weather[0].description}</div>
+              <img
+                className="icon"
+                src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+              ></img>
+            </div>
           </div>
-        </div>
-
-        <div className="weather-box">
-          <div className="temp">-15°C</div>
-          <div className="weather">Snowing</div>
-          <div className="icon"></div>
-        </div>
+        ) : (
+          ""
+        )}
       </main>
     </div>
   );
