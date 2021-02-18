@@ -26,7 +26,15 @@ function App() {
   const day = new Date().getDate();
 
   return (
-    <div className="app warm">
+    <div
+      className={
+        typeof weather.main != "undefined"
+          ? weather.main.temp > 16
+            ? "app warm"
+            : "app"
+          : "app"
+      }
+    >
       <main>
         <div className="search-box">
           <h1>city weather app</h1>
@@ -51,7 +59,7 @@ function App() {
             </div>
 
             <div className="weather-box">
-              <div className="temp">{weather.main.temp}°C</div>
+              <div className="temp">{Math.round(weather.main.temp)}°C</div>
               <div className="weather">{weather.weather[0].description}</div>
               <img
                 className="icon"
