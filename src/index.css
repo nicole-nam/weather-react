@@ -19,7 +19,7 @@ body {
   background-image: url("./assets/cold-bg.jpg");
   background-size: cover;
   background-position: bottom;
-  transition: 0.3s ease-out;
+  transition: .5s ease-out;
 
   max-width: 50rem;
   margin: 0 auto;
