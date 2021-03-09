@@ -17,6 +17,9 @@ function App() {
           setWeather(result);
           setQuery("");
           console.log(result);
+          if (result.cod === "404") {
+            alert("Please enter a proper city name");
+          }
         });
     }
   };
@@ -76,5 +79,3 @@ function App() {
 }
 
 export default App;
-
-
