@@ -1,4 +1,4 @@
-# City Weather App
+# City Weather App | [live site](https://nicole-nam.github.io/weather-react/)
 
 ![alt text](http://nicolenam.com/images/project-img/weather-app.png)
 
