@@ -1,8 +1,8 @@
-# City Weather App | [live site](https://nicole-nam.github.io/weather-react/)
+# City Weather App
 
 ![alt text](http://nicolenam.com/images/project-img/weather-app.png)
 
-A simple weather app using Open Weather API.
+A simple weather app using Open Weather API. [live site](https://nicole-nam.github.io/weather-react/)
 
 ## Installation
 
